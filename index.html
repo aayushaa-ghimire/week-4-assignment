@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Slider Library Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="slider.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="slider-main">
+        <section class="slider-container" aria-label="Image Slider Library">
+            <div class="slider-viewport">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide">
+                        <img src="./images/img-1.jpeg" alt="image 1" />
+                    </div>
+                    <div class="slide">
+                        <img src="./images/img-2.png" alt="image 2" />
+                    </div>
+                    <div class="slide">
+                        <img src="./images/img-3.png" alt="image 3" />
+                    </div>
+                    <div class="slide">
+                        <img src="./images/img-4.png" alt="image 4" />
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-btn prev-btn" id="prevBtn" aria-label="Previous slide">&lsaquo;</button>
+            <button class="slider-btn next-btn" id="nextBtn" aria-label="Next slide">&rsaquo;</button>
+
+            <div class="slider-dots" id="sliderDots" role="tablist" aria-label="Slides pagination"></div>
+        </section>
+    </main>
+
+</body>
+</html>

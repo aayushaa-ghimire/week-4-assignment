@@ -1,0 +1,142 @@
+:root {
+    --bg-body: #fffafc;
+    --bg-pink: #fce4ec;
+    --bg-card: #ffffff;
+    --text-dark: #2d3e50;
+    --text-muted: #8d7080;
+    --accent-pink: #b4647d;
+    --accent-navy: #2d3e50;
+    --border-light: rgba(180, 100, 125, 0.18);
+    --font-serif: "Playfair Display", Georgia, serif;
+    --font-sans: "Poppins", -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.slider-main {
+    width: 100%;
+    max-width: 52rem;
+    padding: 1.5rem;
+}
+
+.slider-container {
+    position: relative;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 1rem;
+    box-shadow: 0 12px 35px rgba(180, 100, 125, 0.1);
+    overflow: hidden;
+}
+
+.slider-viewport {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bg-pink);
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-pink);
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(45, 62, 80, 0.75);
+    color: #ffffff;
+    border: none;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    font-size: 1.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: var(--accent-pink);
+    transform: translateY(-50%) scale(1.06);
+}
+
+.prev-btn {
+    left: 1.25rem;
+}
+
+.next-btn {
+    right: 1.25rem;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-light);
+}
+
+.dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--bg-pink);
+    border: 1px solid var(--accent-pink);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--accent-pink);
+    transform: scale(1.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider-track {
+        transition: none;
+    }
+}
